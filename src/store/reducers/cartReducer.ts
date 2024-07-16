@@ -1,5 +1,6 @@
 import {IAction, ICounters} from '../../interface';
 import {
+    INIT_CART,
     LOADING_INCREASE,
     LOADING_DECREASE,
     TIMER_DECREASE,
@@ -8,13 +9,12 @@ import {
 } from '../actions';
 
 const DEFAULT_COUNTERS = {
-    loading: 0,
-    timers: 0,
+    products: []
 }
 
-export const counterReducer = (state: ICounters = DEFAULT_COUNTERS, action: IAction) => {
+export const cartReducer = (state: ICounters = DEFAULT_COUNTERS, action: IAction) => {
     switch (action.type) {
-        case LOADING_DECREASE: {
+        case INIT_CART: {
             return {
                 ...state,
                 loading: state.loading - 1,

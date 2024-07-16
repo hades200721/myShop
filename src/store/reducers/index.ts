@@ -1,6 +1,6 @@
 import {Reducer, combineReducers} from 'redux';
 
-import {counterReducer} from './counterReducer';
+import {cartReducer} from './cartReducer';
 import {modalReducer} from './modalReducer';
 import {ipReducer} from './ipReducer';
 import {IAction} from '../../interface';
@@ -8,7 +8,7 @@ import {DESTROY_SESSION} from '../actions';
 import {ICounters} from '../../interface';
 
 const appReducer = combineReducers({
-    counter: counterReducer,
+    counter: cartReducer,
     modal: modalReducer,
     ips: ipReducer,
 });

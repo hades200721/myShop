@@ -6,8 +6,9 @@ import {Footer} from './footer';
 import {isClickedOutside, isEscPressed} from '../../../utils/modal';
 import {StyledPage} from './style';
 import {SET_IS_SHOW_MODAL} from '../../../store/actions';
+import {rand, sleep} from "../../../routing/utils";
 
-export const IPLookup = React.memo(() => {
+export const Shop = React.memo(() => {
     const dispatch = useDispatch();
     const modalRef = useRef<HTMLInputElement | null>(null);
 
@@ -48,4 +49,9 @@ export const IPLookup = React.memo(() => {
         </StyledPage>
     );
 });
+
+export async function shopLoader() {
+    await sleep();
+    return {data: `Home loader - random value ${rand()}`};
+}
 

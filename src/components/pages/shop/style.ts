@@ -7,13 +7,7 @@ export const StyledPage = styled.div`
     box-sizing: border-box;
     display: flex;
     flex-flow: column;
-    height: auto;
-    left: 50%;
-    padding-bottom: 56px;
-    position: fixed;
     row-gap: 8px;
-    top: 50%;
     width: 500px;
-    transform: translate3d(-50%, -50%, 0);
     z-index: 1;
 `;

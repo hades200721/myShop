@@ -1,4 +1,4 @@
 export type {IAction, IIPAction} from './IAction';
-export type {ICounters} from './counters';
-export type {IModalObject} from './IModal';
+export type {ICart} from './cart';
+export type {IProduct} from './IProduct';
 export type {IIP} from './IIP';

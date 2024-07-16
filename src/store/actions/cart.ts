@@ -1,3 +1,5 @@
+export const INIT_CART = 'INIT_CART';
+
 export const LOADING_INCREASE = 'LOADING_INCREASE';
 export const LOADING_DECREASE = 'LOADING_DECREASE';
 export const TIMER_INCREASE = 'TIMER_INCREASE';
