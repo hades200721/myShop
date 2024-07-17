@@ -7,7 +7,6 @@ import {RootState} from '../../../store/store';
 
 export const Cart = React.memo(() => {
     const cartProducts = useSelector<RootState, IProduct[]>((state) => state.cart);
-    debugger;
     const productsListToRender = useMemo(() => {
         return cartProducts.map((product: IProduct) => <Product key={product.id} product={product}></Product>);
     }, [cartProducts]);
