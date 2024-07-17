@@ -1,14 +1,20 @@
-import React from 'react';
-import {StyledPage} from './style';
+import React, {useMemo} from 'react';
 import {rand, sleep} from '../../../routing/utils';
-import {useLoaderData} from "react-router-dom";
+import {Product} from '../shop/body/product';
+import {IProduct} from '../../../interface';
+import {useSelector} from 'react-redux';
+import {RootState} from '../../../store/store';
 
 export const Cart = React.memo(() => {
-    let data = useLoaderData();
+    const cartProducts = useSelector<RootState, IProduct[]>((state) => state.cart);
+    debugger;
+    const productsListToRender = useMemo(() => {
+        return cartProducts.map((product: IProduct) => <Product key={product.id} product={product}></Product>);
+    }, [cartProducts]);
+
     return (
         <div>
-            <h2>Cart</h2>
-            <p>Loader Data: {data.data}</p>
+            {productsListToRender}
         </div>
     );
 });

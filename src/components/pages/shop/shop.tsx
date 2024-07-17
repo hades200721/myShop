@@ -2,9 +2,8 @@ import React from 'react';
 import {Header} from './header/header';
 import {SideBar} from './sideBar';
 import {Body} from './body/body';
-import {fetchProducts} from '../../../api/ip';
+import {fetchProducts} from '../../../api/product';
 import {StyledPage} from './style';
-import {rand, sleep} from "../../../routing/utils";
 
 export const Shop = React.memo(() => {
 

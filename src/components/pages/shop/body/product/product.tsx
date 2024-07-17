@@ -1,5 +1,10 @@
 import React, {useCallback} from 'react';
 import {useDispatch} from 'react-redux';
+import {Url} from './url';
+import {Description} from "./description";
+import {Image} from './image';
+import {Title} from './title';
+import {StyledProductContainer} from './style';
 import {IProduct} from '../../../../../interface';
 import {ADD_PRODUCT} from '../../../../../store/actions';
 
@@ -18,6 +23,11 @@ export const Product: React.FC<IProductProps> = ({product}) => {
     }, []);
 
     return (
-        <div onClick={onProductAddHandler}>{product.title}</div>
+        <StyledProductContainer onClick={onProductAddHandler}>
+            <Image description={product.title} thumbnailUrl={product.thumbnail} />
+            <Title title={product.title} />
+            <Description title={product.description} />
+            <Url url={product.title} />
+        </StyledProductContainer>
     );
 }

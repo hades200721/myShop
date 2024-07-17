@@ -2,9 +2,12 @@ import styled from 'styled-components';
 import {Button} from '../../../common';
 
 export const StyledBody = styled.div`
-    background-color: red;
+    column-gap: 30px;
+    display: grid;
     flex-flow: column nowrap;
     grid-area: products;
+    grid-template-columns: repeat(6, calc(100% / 6 - 30px / 6*(6 - 1)));
+    padding: 0 250px;
     row-gap: 16px;
 `;
 
