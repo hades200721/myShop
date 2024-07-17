@@ -5,7 +5,7 @@ const DEFAULT_EVENT_OBJECT = {
     isShowModal: true,
 }
 
-export const modalReducer = (state: IModalObject = DEFAULT_EVENT_OBJECT, action: IAction) => {
+export const shopReducer = (state: IModalObject = DEFAULT_EVENT_OBJECT, action: IAction) => {
     switch (action.type) {
         case SET_IS_SHOW_MODAL: {
             return {

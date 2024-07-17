@@ -1,7 +1,9 @@
 import React, {useCallback} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
-import {faCartShopping, faUser} from '@fortawesome/free-solid-svg-icons';
+import {faUser} from '@fortawesome/free-solid-svg-icons';
+import {Cart} from './cart/cart';
 import {Search} from './search';
+import Logo from '../../assets/Framerlogo.svg';
 import {StyledHeaderContainer, StyledHeaderContent, StyledLeftPart, StyledBtnGroup} from './style';
 import {StyledButton} from '../pages/shop/body/style';
 import {Icon} from '../common';
@@ -9,6 +11,10 @@ import {Icon} from '../common';
 
 export const Header = () => {
     const navigate = useNavigate();
+
+    const onLogoClickHandler = useCallback(() => {
+        navigate('/');
+    }, []);
 
     const onCartClickHandler = useCallback(() => {
         navigate('/cart');
@@ -22,9 +28,7 @@ export const Header = () => {
         <StyledHeaderContainer>
             <StyledHeaderContent>
                 <StyledLeftPart>
-                        <li>
-                            <Link to="/">Home</Link>
-                        </li>
+                        <Logo onClick={onLogoClickHandler} />
                         <Search />
                         <li>
                             <Link to="/lazy">Lazy</Link>
@@ -37,12 +41,9 @@ export const Header = () => {
                         </li>
                 </StyledLeftPart>
                 <StyledBtnGroup>
-                    <StyledButton onClick={onCartClickHandler}>
-                        <Icon icon={faCartShopping}/>
-                    </StyledButton>
-
-                    <StyledButton onClick={onAccountClickHandler}>
-                        <Icon icon={faUser}/>
+                    <Cart />
+                    <StyledButton onClick={onAccountClickHandler} label={'account'}>
+                        <Icon icon={faUser} size={"xl"} />
                     </StyledButton>
                 </StyledBtnGroup>
             </StyledHeaderContent>

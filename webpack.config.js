@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
+const AssetsPath = path.resolve(__dirname, './src/assets');
 
 module.exports = {
     entry: "./src/main.tsx",
@@ -30,9 +31,14 @@ module.exports = {
                 use: ["style-loader", "css-loader"]
             },
             {
-                test: /\.(png|svg|jpg|gif)$/,
+                test: /\.(png|jpg|gif)$/,
                 exclude: /node_modules/,
                 use: ["file-loader"]
+            },
+            {
+                test: /\.svg$/i,
+                issuer: /\.[jt]sx?$/,
+                use: ['@svgr/webpack'],
             },
         ],
     },

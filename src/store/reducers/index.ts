@@ -1,28 +1,21 @@
 import {Reducer, combineReducers} from 'redux';
 
 import {cartReducer} from './cartReducer';
-import {modalReducer} from './modalReducer';
-import {ipReducer} from './ipReducer';
-import {IAction} from '../../interface';
+import {shopReducer} from './modalReducer';
+import {productsReducer} from './ipReducer';
+import {IAction, IProduct} from '../../interface';
 import {DESTROY_SESSION} from '../actions';
-import {ICounters} from '../../interface';
 
 const appReducer = combineReducers({
-    counter: cartReducer,
-    modal: modalReducer,
-    ips: ipReducer,
+    cart: cartReducer,
+    shop: shopReducer,
+    products: productsReducer,
 });
 
 interface IAppState {
-    counter: ICounters;
-    modal: never;
-    ips: {
-        ip: string;
-        isError: boolean;
-        isLoading: boolean;
-        isValidIP: boolean;
-        data: object;
-    }[];
+    cart: Array<IProduct>;
+    shop: never;
+    products: Array<IProduct>;
 }
 
 export const rootReducer: Reducer<IAppState, IAction> = (state, action: IAction) => {

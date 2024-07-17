@@ -1,26 +1,24 @@
-import {useCallback} from 'react';
-import {useDispatch} from 'react-redux';
-import {faXmark} from '@fortawesome/free-solid-svg-icons';
-import {SET_IS_SHOW_MODAL} from '../../../../store/actions';
-import {StyledHeaderContainer, StyledTitle, StyledActionIcon} from './style';
-import {MODAL_TITLE_TXT} from './constants';
-import {Icon} from "../../../common";
+import React from 'react';
+import {useSelector} from 'react-redux';
+import {RootState} from '../../../../store/store';
+import {IProduct} from '../../../../interface';
+import {
+    StyledFooterContainer,
+    StyledSingleIp,
+    StyledIndex,
+} from './style';
 
-export const Header = () => {
-    const dispatch = useDispatch();
-    const onCloseHandler = useCallback(() => {
-        dispatch({
-            type: SET_IS_SHOW_MODAL,
-            payload: false,
-        });
-    }, []);
+
+export const Header = React.memo(() => {
+    const products = useSelector<RootState, IProduct[]>((state) => state.products);
 
     return (
-        <StyledHeaderContainer>
-            <StyledTitle>{MODAL_TITLE_TXT}</StyledTitle>
-            <StyledActionIcon onClick={onCloseHandler}>
-                <Icon icon={faXmark} />
-            </StyledActionIcon>
-        </StyledHeaderContainer>
+        <StyledFooterContainer>
+            {products.map((product: IProduct, index: number) => (
+                <StyledSingleIp key={index}>
+                    <StyledIndex>{(index + 1)}</StyledIndex>
+                </StyledSingleIp>
+            ))}
+        </StyledFooterContainer>
     );
-}
+});

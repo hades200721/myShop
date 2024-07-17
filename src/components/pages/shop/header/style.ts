@@ -1,25 +1,32 @@
 import styled from 'styled-components';
 
-export const StyledHeaderContainer = styled.div`
-    align-items: center;
-    border-bottom: 1px solid var(--bgcolor-greyScale3);
-    column-gap: 8px;
+export const StyledFooterContainer = styled.div`
+    background-color: yellow;
+    border-top: 1px solid var(--bgcolor-greyScale3);
     display: flex;
-    height: 40px;
+    flex-flow: column nowrap;
     justify-content: space-between;
-    padding: 0 16px;
+    grid-area: header;
+    max-height: 500px;
+    overflow-y: auto;
+    row-gap: 8px;
 `;
 
-export const StyledTitle = styled.span`
-    color: var(--text-color-main);
-    font-size: 18px;
-    font-weight: 700;
+export const StyledSingleIp = styled.div`
+    align-items: center;
+    column-gap: 16px;
+    display: flex;
+    height: 32px;
 `;
 
-export const StyledActionIcon = styled.span`
-    color: var(--bgcolor-greyScale3);
-    cursor: pointer;
-    font-size: 16px;
-    margin: 0;
-    transform: unset;
+export const StyledIndex = styled.span`
+    border-radius: 50%;
+    background-color: var(--bgcolor-greyScale6);
+    text-align: center;
+    line-height: 32px;
+    width: 32px;
 `;
+
+interface elementProps {
+    inValid: boolean;
+}

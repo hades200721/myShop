@@ -5,11 +5,13 @@ import {IconProps} from './interface';
 export const Icon: React.FC<IconProps> = ({
                            className,
                            icon,
+                           ...props
                        }) => {
     return (
         <FontAwesomeIcon
             className={className}
             icon={icon}
+            {...props}
         />
     );
 };

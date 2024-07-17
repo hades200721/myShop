@@ -11,6 +11,5 @@ export const StyledLayout = styled.div`
 `;
 
 export const StyledBody = styled.div`
-    background: var(--negative-1);
     grid-area: body;
 `;

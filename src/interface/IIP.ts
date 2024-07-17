@@ -1,4 +1,4 @@
-export interface IIP {
+export interface IShop {
   ip: string;
   isValidIP: boolean;
   isError: boolean;

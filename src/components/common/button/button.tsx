@@ -10,11 +10,10 @@ export const Button: React.FC<ButtonProps> = ({
                        }) => {
     return (
         <StyledButton
-            data-testid='custom-button'
             className={className}
             {...props}
         >
-            <span data-testid='custom-button-text'>{label}</span>
+            <span>{label}</span>
             {children}
         </StyledButton>
     );

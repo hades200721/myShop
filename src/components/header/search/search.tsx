@@ -1,11 +1,11 @@
 import React from 'react';
-import {StyledSearchContainer} from './style';
+import {StyledInput, StyledSearchContainer} from './style';
 
 export const Search = () => {
 
     return (
         <StyledSearchContainer>
-            <input></input>
+            <StyledInput placeholder={'what are you looking for?'} />
         </StyledSearchContainer>
     );
 }
