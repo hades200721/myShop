@@ -8,7 +8,7 @@ import {StyledButton, StyledNotification} from '../../pages/shop/body/style';
 import {IProduct} from '../../../interface';
 
 
-export const Cart = () => {
+export const CartBtn = () => {
     const navigate = useNavigate();
     const cartProducts = useSelector<RootState, IProduct[]>((state) => state.cart);
 

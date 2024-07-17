@@ -1,8 +1,8 @@
 import type { Router } from '@remix-run/router';
 import {createBrowserRouter, Link, useLoaderData, redirect} from 'react-router-dom';
-import {sleep, rand} from './utils';
-import {shopLoader, Shop} from '../components/pages';
-import {App} from "../components/App";
+import {sleep} from './utils';
+import {cartLoader, Cart, shopLoader, Shop} from '../components/pages';
+import {App} from '../components/App';
 
 export const routes: Router = createBrowserRouter([
     {
@@ -20,7 +20,7 @@ export const routes: Router = createBrowserRouter([
             },
             {
                 path: "cart",
-                loader: dashboardLoader,
+                loader: cartLoader,
                 element: <Cart/>,
             },
             {
@@ -39,21 +39,6 @@ function Account() {
     return (
         <div>
             <h2>account</h2>
-        </div>
-    );
-}
-
-async function dashboardLoader() {
-    await sleep();
-    return {data: `Dashboard loader - random value ${rand()}`};
-}
-
-function Cart() {
-    let data = useLoaderData();
-    return (
-        <div>
-            <h2>Cart</h2>
-            <p>Loader Data: {data.data}</p>
         </div>
     );
 }

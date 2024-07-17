@@ -1,7 +1,7 @@
 import React, {useCallback} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import {faUser} from '@fortawesome/free-solid-svg-icons';
-import {Cart} from './cart/cart';
+import {CartBtn} from './cart/cart';
 import {Search} from './search';
 import Logo from '../../assets/Framerlogo.svg';
 import {StyledHeaderContainer, StyledHeaderContent, StyledLeftPart, StyledBtnGroup} from './style';
@@ -41,7 +41,7 @@ export const Header = () => {
                         </li>
                 </StyledLeftPart>
                 <StyledBtnGroup>
-                    <Cart />
+                    <CartBtn />
                     <StyledButton onClick={onAccountClickHandler} label={'account'}>
                         <Icon icon={faUser} size={"xl"} />
                     </StyledButton>

@@ -1,30 +1,18 @@
-import {useCallback} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import {ADD_PRODUCT} from '../../../../store/actions';
-import {StyledBody, StyledButton} from './style';
+import {useMemo} from 'react';
+import {useLoaderData} from 'react-router-dom';
+import {Product} from './product';
+import {StyledBody} from './style';
 import {IProduct} from "../../../../interface";
 
-const RANDOM_PRODUCT: IProduct = {
-    description: 'what ever goes here',
-    title: 'EasyFeed automatic feeder for fish',
-    price: 24,
-    productId: 1111,
-    thumbnail: '',
-}
-
 export const Body = () => {
-    const dispatch = useDispatch();
-
-    const onProductAddHandler = useCallback(() => {
-         dispatch({
-            type: ADD_PRODUCT,
-            payload: RANDOM_PRODUCT,
-        });
-    }, []);
+    const data = useLoaderData();
+    const productsListToRender = useMemo(() => {
+        return data.map((product: IProduct) => <Product key={product.id} product={product}></Product>);
+    }, [data]);
 
     return (
         <StyledBody>
-            <StyledButton label={'Add random product hardcoded'} onClick={onProductAddHandler} />
+            {productsListToRender}
         </StyledBody>
     );
 }
