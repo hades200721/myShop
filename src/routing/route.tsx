@@ -1,5 +1,5 @@
 import type { Router } from '@remix-run/router';
-import {createBrowserRouter, Link, useLoaderData, redirect} from 'react-router-dom';
+import {createBrowserRouter, Link, redirect} from 'react-router-dom';
 import {sleep} from './utils';
 import {cartLoader, Cart, shopLoader, Shop} from '../components/pages';
 import {App} from '../components/App';

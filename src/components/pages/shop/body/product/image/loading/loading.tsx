@@ -1,5 +1,5 @@
 import React from 'react';
-import LoadingSpinner from '../../../../../../../assets/loadingSpinner';
+import LoadingSpinner from '../../../../../../../assets/loadingSpinner.svg';
 
 interface ILoadingProps {
     isShow: boolean;

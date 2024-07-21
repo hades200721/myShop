@@ -1,11 +1,11 @@
 import React from 'react';
-import {StyledTitle} from './style.ts';
-import {ITitleProps} from './interface.ts';
+import {StyledTitle} from './style';
+import {ITitleProps} from './interface';
 
-export const Title: React.FC<ITitleProps> = ({title}) => {
+export const Title: React.FC<ITitleProps> = React.memo(({title}) => {
     return (
         <StyledTitle>
             {title}
         </StyledTitle>
     );
-}
+});

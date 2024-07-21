@@ -1,1 +1,1 @@
-export {Blank} from './blank.tsx';
+export {Blank} from './blank';

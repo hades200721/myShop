@@ -6,7 +6,7 @@ export const StyledLayout = styled.div`
         "header"
         "body"
         "footer";
-    grid-template-rows: 110px 1fr 150px;
+    grid-template-rows: 110px 1fr 100px;
     height: 100vh;
 `;
 

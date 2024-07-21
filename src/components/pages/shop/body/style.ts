@@ -7,11 +7,13 @@ export const StyledBody = styled.div`
     flex-flow: column nowrap;
     grid-area: products;
     grid-template-columns: repeat(6, calc(100% / 6 - 30px / 6*(6 - 1)));
+    margin: 24px 0;
     padding: 0 250px;
     row-gap: 16px;
 `;
 
 export const StyledButton = styled(Button)`
+    ${({color}) => !!color ? color : 'unset'};
     flex-flow: column-reverse;
     font-size: 14px;
     font-weight: normal;
@@ -21,18 +23,5 @@ export const StyledButton = styled(Button)`
 `;
 
 export const StyledNotification = styled.span`
-    font-size: 10px;
-    line-height: 13px;
-    text-transform: uppercase;
-    color: #fff;
-    text-align: center;
-    display: inline-block;
-    min-width: 16px;
-    height: 16px;
-    position: absolute;
-    top: 0;
-    right: 4px;
-    background: #f55123;
-    padding: 2px 3px 1px;
-    border-radius: 16px;
+    background-color: Tomato;
 `;

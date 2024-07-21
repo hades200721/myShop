@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const StyledImageContainer = styled.div`
+    align-self: center;
+    cursor: pointer;
     position: relative;
 `;
 

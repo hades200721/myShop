@@ -1,5 +1,5 @@
 import NoImage from '../../../../../../../assets/noImage.svg';
-import {StyledImageContainer} from './style';
+import {StyledImageContainer} from '../style';
 
 export const Blank = () => {
     return (

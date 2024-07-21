@@ -17,6 +17,7 @@
     "noImplicitReturns": true,
     // Strict Rules - v4.8
     "alwaysStrict": true,
+    "skipLibCheck": true,
     "strictBindCallApply": true,
     "strictFunctionTypes": true,
     "strictNullChecks": true,
@@ -40,6 +41,6 @@
     "esModuleInterop": true,
     "isolatedModules": true
   },
-  "include": ["src/**/**/*"],
+  "include": ["src/**/**/*", "src/declarations.d.ts"],
   "exclude": ["node_modules"]
 }

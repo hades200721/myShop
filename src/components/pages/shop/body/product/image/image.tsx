@@ -1,6 +1,5 @@
 import React, {useCallback, useMemo, useRef, useState} from 'react';
 import {Blank} from './blank';
-import {Loading} from './loading';
 import {StyledImageContainer, StyledImage} from './style';
 import {IImageProps} from './interface';
 

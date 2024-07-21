@@ -8,4 +8,5 @@ export const isClickedOutside = (target: Node, modalRef: RefObject<HTMLInputElem
     if (target) {
         return !modalRef.current?.contains(target);
     }
+    return false;
 }

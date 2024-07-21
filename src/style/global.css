@@ -15,6 +15,9 @@
     --bgcolor-greyScale8: #F1F1F5;
     --bgcolor-greyScale9: #F9F9FB;
     --bgcolor-greyScale10: #FFFFFF;
+
+    /* FONT AWESOME VARS */
+    --fa-counter-scale: 1;
 }
 
 @media (max-width: 1025px) {

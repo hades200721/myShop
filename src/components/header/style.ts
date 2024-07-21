@@ -10,6 +10,7 @@ export const StyledHeaderContainer = styled.div`
 `;
 
 export const StyledHeaderContent = styled.div`
+    column-gap: 12px;
     display: flex;
     font-size: 18px;
     font-weight: 700;
@@ -29,4 +30,9 @@ export const StyledBtnGroup = styled.div`
     display: flex;
     align-items: center;
     column-gap: 8px;
+`;
+
+export const StyledTitle = styled.div`
+  font-size: 48px;
+  place-self: center;
 `;

@@ -1,4 +1,4 @@
-import React, {useCallback} from 'react';
+import {useCallback} from 'react';
 import {useSelector} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
 import {faCartShopping} from '@fortawesome/free-solid-svg-icons';
@@ -20,7 +20,7 @@ export const CartBtn = () => {
         <>
             <StyledButton onClick={onCartClickHandler} label={'cart'}>
                 <Icon icon={faCartShopping} size={"xl"} />
-                {!!cartProducts.length && <StyledNotification>{cartProducts.length}</StyledNotification>}
+                {!!cartProducts.length && <StyledNotification className={'fa-layers-counter'}>{cartProducts.length}</StyledNotification>}
             </StyledButton>
         </>
     );

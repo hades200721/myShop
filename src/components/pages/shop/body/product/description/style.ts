@@ -5,6 +5,7 @@ export const StyledTitle = styled.div`
     ${TextEllipsisStyle};
     align-self: center;
     color: var(--text-color-main);
+    display: block;
     font-size: 20px;
     font-weight: 700;
     line-height: 1;
@@ -12,7 +13,4 @@ export const StyledTitle = styled.div`
     text-align: left;
     text-indent: 16px;
     text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
 `;

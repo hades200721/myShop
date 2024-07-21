@@ -1,11 +1,14 @@
 import styled from 'styled-components';
 
 export const StyledSearchContainer = styled.div`
-    height: 32px;
     background: white;
     border-radius: 12px;
+    flex: 1 1 auto;
+    margin: 12px 0;
     overflow: hidden;
-    width: 550px;
+    place-content: center;
+    width: 750px;
+
 `;
 
 export const StyledInput = styled.input`

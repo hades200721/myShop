@@ -1,6 +1,6 @@
 import React, {useCallback} from 'react';
 import {useDispatch} from 'react-redux';
-import {Url} from './url';
+import {Cta} from './cta';
 import {Description} from "./description";
 import {Image} from './image';
 import {Title} from './title';
@@ -9,6 +9,7 @@ import {IProduct} from '../../../../../interface';
 import {ADD_PRODUCT} from '../../../../../store/actions';
 
 interface IProductProps {
+    key: number;
     product: IProduct,
 }
 
@@ -23,11 +24,11 @@ export const Product: React.FC<IProductProps> = ({product}) => {
     }, []);
 
     return (
-        <StyledProductContainer onClick={onProductAddHandler}>
+        <StyledProductContainer>
             <Image description={product.title} thumbnailUrl={product.thumbnail} />
             <Title title={product.title} />
             <Description title={product.description} />
-            <Url url={product.title} />
+            <Cta onClick={onProductAddHandler} />
         </StyledProductContainer>
     );
 }

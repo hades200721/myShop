@@ -1,4 +1,3 @@
-import React from 'react';
 import {StyledInput, StyledSearchContainer} from './style';
 
 export const Search = () => {

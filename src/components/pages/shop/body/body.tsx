@@ -5,7 +5,7 @@ import {StyledBody} from './style';
 import {IProduct} from "../../../../interface";
 
 export const Body = () => {
-    const data = useLoaderData();
+    const data = useLoaderData() as IProduct[];
     const productsListToRender = useMemo(() => {
         return data.map((product: IProduct) => <Product key={product.id} product={product}></Product>);
     }, [data]);
