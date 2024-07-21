@@ -19,19 +19,6 @@ export const StyledHeaderContent = styled.div`
     width: 100%;
 `;
 
-export const StyledLeftPart = styled.div`
-    display: flex;
-    column-gap: 8px;
-    flex: 1 1 auto;
-    flex-flow: row nowrap;
-`;
-
-export const StyledBtnGroup = styled.div`
-    display: flex;
-    align-items: center;
-    column-gap: 8px;
-`;
-
 export const StyledTitle = styled.div`
   font-size: 48px;
   place-self: center;

@@ -1,4 +1,4 @@
 export const DESTROY_SESSION = 'DESTROY_SESSION';
 export const SET_IS_SHOW_MODAL = 'SET_IS_SHOW_MODAL';
 
-export const TIMER_TICK = 'TIMER_TICK';
+export const SET_FILTER_SEARCH_QUERY = 'SEARCH_QUERY';

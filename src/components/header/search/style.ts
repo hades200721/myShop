@@ -15,6 +15,7 @@ export const StyledInput = styled.input`
     border: unset;
     height: 32px;
     text-indent: 12px;
+    width: 100%;
     :focus {
         border: unset;
         outline: unset;

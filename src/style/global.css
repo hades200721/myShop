@@ -1,6 +1,6 @@
 :root {
     --border-radius: 8px;
-    --horizontal-items: 4;
+    --horizontal-items: 6;
 
     --bg-primary-cta: #3d54db;
     --text-color-main: #333;
@@ -20,9 +20,9 @@
     --fa-counter-scale: 1;
 }
 
-@media (max-width: 1025px) {
+@media (max-width: 1860px) {
     :root {
-        --horizontal-items: 3;
+        --horizontal-items: 4;
     }
 }
 
@@ -33,7 +33,11 @@
 }
 
 body {
+    color: #333;
+}
+
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: #333;
 }

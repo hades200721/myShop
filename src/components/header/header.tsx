@@ -3,10 +3,8 @@ import {useNavigate} from 'react-router-dom';
 import {faUser} from '@fortawesome/free-solid-svg-icons';
 import {CartBtn} from './cart/cart';
 import {Search} from './search';
-import Logo from '../../assets/Framerlogo.svg';
-import {StyledHeaderContainer, StyledHeaderContent, StyledLeftPart, StyledBtnGroup, StyledTitle} from './style';
+import {StyledHeaderContainer, StyledHeaderContent, StyledTitle} from './style';
 import {StyledButton} from '../pages/shop/body/style';
-import {StyledImageContainer} from '../pages/shop/body/product/image/style';
 import {Icon} from '../common';
 import {APP_NAME} from '../../constants';
 

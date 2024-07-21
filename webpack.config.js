@@ -5,6 +5,7 @@ const AssetsPath = path.resolve(__dirname, './src/assets');
 module.exports = {
     entry: "./src/main.tsx",
     mode: "development",
+    devtool: 'source-map', // Enable source maps
     output: {
         filename: "bundle.[fullhash].js",
         path: path.resolve(__dirname, "dist"),
