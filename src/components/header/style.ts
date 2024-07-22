@@ -20,6 +20,7 @@ export const StyledHeaderContent = styled.div`
 `;
 
 export const StyledTitle = styled.div`
-  font-size: 48px;
-  place-self: center;
+    cursor: pointer;
+    font-size: 48px;
+    place-self: center;
 `;

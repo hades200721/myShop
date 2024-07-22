@@ -1,10 +1,12 @@
+import {Sorting} from './sorting';
 import {StyledSideBarContainer, StyledTitle} from './style';
-import {MODAL_TITLE_TXT} from './constants';
+import {FILTERS_TXT} from './constants';
 
 export const SideBar = () => {
     return (
         <StyledSideBarContainer>
-            <StyledTitle>{MODAL_TITLE_TXT}</StyledTitle>
+            <Sorting />
+            <StyledTitle>{FILTERS_TXT}</StyledTitle>
         </StyledSideBarContainer>
     );
 }

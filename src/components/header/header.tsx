@@ -2,7 +2,8 @@ import {useCallback} from 'react';
 import {useNavigate} from 'react-router-dom';
 import {faUser} from '@fortawesome/free-solid-svg-icons';
 import {CartBtn} from './cart/cart';
-import {Search} from './search';
+// import {Search} from './search';
+import {SearchComponent} from './search/searchComponent';
 import {StyledHeaderContainer, StyledHeaderContent, StyledTitle} from './style';
 import {StyledButton} from '../pages/shop/body/style';
 import {Icon} from '../common';
@@ -24,7 +25,7 @@ export const Header = () => {
     <StyledHeaderContainer>
       <StyledHeaderContent>
         <StyledTitle onClick={onLogoClickHandler}>{APP_NAME}</StyledTitle>
-        <Search />
+        <SearchComponent />
         <CartBtn />
         <StyledButton onClick={onAccountClickHandler} label={'account'}>
           <Icon icon={faUser} size={'xl'} />

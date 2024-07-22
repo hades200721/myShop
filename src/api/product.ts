@@ -1,4 +1,6 @@
-import {IProduct} from "../interface";
+import noImage from '../assets/noImage.svg';
+
+import {IProduct} from '../interface';
 
 const RANDOM_PRODUCT: Array<IProduct> = [
     {
@@ -94,6 +96,18 @@ const RANDOM_PRODUCT: Array<IProduct> = [
     }
 ];
 
+export const NO_PRODUCT_FOUND: IProduct = {
+    description: 'no product with such id :(',
+    id: -1,
+    price: 0,
+    title: 'No such product found',
+    thumbnail: 'no image',
+}
+
 export async function fetchProducts(): Promise<IProduct[]> {
     return RANDOM_PRODUCT;
+}
+
+export async function fetchProduct(id: number): Promise<IProduct> {
+    return RANDOM_PRODUCT.find(product => product.id === id) || NO_PRODUCT_FOUND;
 }

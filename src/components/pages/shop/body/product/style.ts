@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledProductContainer = styled.div`
+export const StyledProductContainer = styled.article`
     border-radius: var(--border-radius);
     box-shadow: rgba(51, 51, 51, 0.05) 0 6px 18px 1px;
     cursor: pointer;

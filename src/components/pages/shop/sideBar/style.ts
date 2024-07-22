@@ -6,10 +6,11 @@ export const StyledSideBarContainer = styled.div`
     border-bottom: 1px solid var(--bgcolor-greyScale3);
     column-gap: 8px;
     display: flex;
+    flex-flow: column;
     grid-area: side-bar;
 `;
 
-export const StyledTitle = styled.span`
+export const StyledTitle = styled.div`
     color: var(--text-color-main);
     font-size: 18px;
     font-weight: 700;
