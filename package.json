@@ -6,6 +6,8 @@
     "build": "webpack --mode production",
     "cy:open": "cypress open",
     "start": "webpack serve --mode development --open",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -38,6 +40,7 @@
     "css-loader": "7.1.2",
     "cypress": "^13.13.0",
     "file-loader": "6.2.0",
+    "gh-pages": "^6.1.1",
     "html-webpack-plugin": "5.6.0",
     "style-loader": "4.0.0",
     "styled-components": "4.3.2",
