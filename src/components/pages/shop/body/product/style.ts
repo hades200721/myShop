@@ -6,8 +6,7 @@ export const StyledProductContainer = styled.article`
     cursor: pointer;
     display: grid;
     flex-flow: column nowrap;
-    grid-auto-rows: 1fr 40px 18px 36px;
-    height: 420px;
+    grid-auto-rows: 1fr 24px 16px 16px 36px;
     overflow: hidden;
     row-gap: 8px;
 `;

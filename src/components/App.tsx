@@ -5,8 +5,7 @@ import {Footer} from './footer';
 import {StyledLayout, StyledBody} from './style';
 
 export const App = React.memo(() => {
-
-    return (
+  return (
         <main>
             <StyledLayout>
                 <Header/>

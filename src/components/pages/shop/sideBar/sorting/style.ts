@@ -7,4 +7,6 @@ export const StyledSortingContainer = styled.div`
     column-gap: 8px;
     display: flex;
     flex-flow: column;
+    margin-bottom: 32px;
+    width: 100%;
 `;

@@ -1,3 +1,4 @@
+import Select from 'react-select'
 import styled from 'styled-components';
 
 export const StyledSideBarContainer = styled.div`
@@ -8,6 +9,11 @@ export const StyledSideBarContainer = styled.div`
     display: flex;
     flex-flow: column;
     grid-area: side-bar;
+`;
+
+export const StyledSelect = styled(Select)`
+    margin: 0 16px;
+    width: 100%;
 `;
 
 export const StyledTitle = styled.div`

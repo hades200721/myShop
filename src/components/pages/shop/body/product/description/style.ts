@@ -11,6 +11,6 @@ export const StyledTitle = styled.div`
     line-height: 1;
     overflow: hidden;
     text-align: left;
-    text-indent: 16px;
+    text-indent: 8px;
     text-overflow: ellipsis;
 `;

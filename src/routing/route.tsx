@@ -11,17 +11,17 @@ export const routes: Router = createBrowserRouter([
         children: [
             {
                 path: "account",
-                element: <Account/>,
+                element: <Account />,
             },
             {
                 path: "cart",
                 loader: cartLoader,
-                element: <Cart/>,
+                element: <Cart />,
             },
             {
                 path: "product/:id",
                 loader: productLoader,
-                element: <Product/>,
+                element: <Product />,
             },
             {
                 path: "redirect",
@@ -34,7 +34,7 @@ export const routes: Router = createBrowserRouter([
             },
             {
                 path: "*",
-                element: <NoMatch/>,
+                element: <NoMatch />,
             },
         ],
     },
