@@ -32,6 +32,10 @@
     }
 }
 
+html {
+    overflow: hidden;
+}
+
 body {
     color: #333;
 }

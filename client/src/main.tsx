@@ -4,6 +4,7 @@ import {Provider} from 'react-redux';
 import {RouterProvider} from 'react-router-dom';
 import {routes} from './routing/route';
 import {store} from './store/store';
+import {Chat} from './components/chat/';
 import './style/global.css';
 import {StyledButton} from './components/pages/shop/body/style';
 
@@ -16,6 +17,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
                   <StyledButton onClick={() => true} label={'account'}>
                   </StyledButton></>}
             />
+          <Chat/>
         </Provider>
     </React.StrictMode>,
 )

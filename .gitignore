@@ -1,3 +1,2 @@
-/node_modules/
-/package-lock.json
-/dist/
+/chat-server/node_modules/
+/chat-server/dist/
