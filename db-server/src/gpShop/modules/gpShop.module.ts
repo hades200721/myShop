@@ -2,11 +2,11 @@ import { Module } from '@nestjs/common';
 import { HttpModule } from '@nestjs/axios';
 import { GpShopController } from '../controllers/gpShop.controller';
 import { GpShopProvider } from '../providers/gpShop.provider';
-import { HistoricalForecast } from '../api/historical.forecast';
+import { ProductsApi } from '../api/products-api.service';
 
 @Module({
   controllers: [GpShopController],
-  providers: [GpShopProvider, HistoricalForecast],
+  providers: [GpShopProvider, ProductsApi],
   imports: [HttpModule],
 })
 export class GpShopModule {}

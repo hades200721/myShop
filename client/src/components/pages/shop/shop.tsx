@@ -13,7 +13,6 @@ export const Shop = () => {
 };
 
 export async function shopLoader() {
-    // fetch to data goes here
   return await fetchProducts().then((response) => {
       return response;
     }).catch((errorCode: string) => {

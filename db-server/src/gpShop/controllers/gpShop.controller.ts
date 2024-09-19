@@ -1,15 +1,17 @@
-import { Controller, Get, UsePipes } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 import { GpShopProvider } from '../providers/gpShop.provider';
-import { JoiValidationPipe } from '../../pipe/joi.validation.pipe';
-import { ForeCastInputValidationSchema } from '../types';
 
-@Controller('gpShop')
+@Controller('product')
 export class GpShopController {
   constructor(private readonly gpShopProvider: GpShopProvider) {}
 
-  @Get('/products')
-  @UsePipes(new JoiValidationPipe(ForeCastInputValidationSchema))
+  @Get()
   async getProducts() {
     return this.gpShopProvider.getProducts();
+  }
+
+  @Get(':id')
+  async getProductById(@Param('id') id: number) {
+    return this.gpShopProvider.getProductById(Number(id));
   }
 }

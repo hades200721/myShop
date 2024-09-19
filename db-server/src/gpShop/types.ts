@@ -1,7 +1,5 @@
 import Joi from 'joi';
 
-export type ForecastInput = BaseForecastParams;
-
 export type BaseForecastParams = {
   startDate: string;
   endDate: string;
@@ -14,7 +12,7 @@ type RatingType = {
   count: number;
 };
 
-export type ForecastResponse = {
+export type ProductInterface = {
   id: number;
   title: string;
   price: number;
@@ -23,16 +21,3 @@ export type ForecastResponse = {
   image: string;
   rating: RatingType;
 };
-
-const dateFormatValidation = Joi.string()
-  .strict()
-  .optional()
-  .pattern(/^\d{4}-\d{2}-\d{2}$/, { name: 'yyyy-mm-dd format' })
-  .required();
-
-export const ForeCastInputValidationSchema = Joi.object({
-  startDate: dateFormatValidation,
-  endDate: dateFormatValidation,
-  latitude: Joi.number().required(),
-  longitude: Joi.number(),
-});

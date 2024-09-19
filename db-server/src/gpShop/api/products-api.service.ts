@@ -1,12 +1,12 @@
 import { Injectable } from '@nestjs/common';
 import { catchError, firstValueFrom } from 'rxjs';
 import { AxiosError } from 'axios';
-import { BaseForecastParams, ForecastResponse } from '../types';
+import { BaseForecastParams, ProductInterface } from '../types';
 import { ConfigService } from '@nestjs/config';
 import { HttpService } from '@nestjs/axios';
 
 @Injectable()
-export class HistoricalForecast {
+export class ProductsApi {
   private readonly url: string;
 
   constructor(
@@ -14,12 +14,12 @@ export class HistoricalForecast {
     private readonly httpService: HttpService,
   ) {
     const historicalForecastBasUrl = this.configService.get<string>(
-      'historicalForecast.baseUrl',
+      'products.baseUrl',
     );
     this.url = `${historicalForecastBasUrl}/products`;
   }
 
-  async fetchDailyHistoricalForecast(): Promise<ForecastResponse> {
+  async fetchProducts(): Promise<ProductInterface> {
     const response = await firstValueFrom(
       this.httpService.get(this.url).pipe(
         catchError((error: AxiosError) => {
@@ -28,10 +28,7 @@ export class HistoricalForecast {
         }),
       ),
     );
-    return this.buildDailyResponse(response);
+    return response.data;
   }
 
-  private buildDailyResponse = (response): ForecastResponse => {
-    return response.data;
-  };
 }
