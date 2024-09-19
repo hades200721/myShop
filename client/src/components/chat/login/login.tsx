@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, {BaseSyntheticEvent, useState} from 'react';
 import axios from 'axios';
 
-export const LoginForm = ({ setToken }) => {
+interface LoginFormProps {
+  setToken: (prevVal: string) => void;
+}
+export const LoginForm: React.FC<LoginFormProps> = ({ setToken }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: BaseSyntheticEvent) => {
         e.preventDefault();
         try {
             const response = await axios.post('http://localhost:3000/auth/login', {

@@ -1,4 +1,4 @@
-import React, {useCallback} from 'react';
+import React, {BaseSyntheticEvent, useCallback} from 'react';
 import {useDispatch} from 'react-redux';
 import {useLocation, useNavigate} from 'react-router-dom';
 import {Cta} from './cta';
@@ -25,16 +25,17 @@ export const Product: React.FC<IProductProps> = ({product}) => {
     navigate(`/product/${productId}${search}`);
   }, [product]);
 
-  const onCtaClickHandler = useCallback(() => {
+  const onCtaClickHandler = useCallback((e: BaseSyntheticEvent) => {
     dispatch({
       type: ADD_PRODUCT,
       payload: product,
     });
+    e.stopPropagation();
   }, []);
 
   return (
     <StyledProductContainer onClick={() => onProductClickHandler(product.id)}>
-      <Image description={product.title} thumbnailUrl={product.thumbnail} />
+      <Image description={product.title} thumbnailUrl={product.image} />
       <Price price={product.price} />
       <Title title={product.title} />
       <Description title={product.description} />

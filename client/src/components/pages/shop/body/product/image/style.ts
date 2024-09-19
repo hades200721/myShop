@@ -12,4 +12,5 @@ export const StyledImage = styled.img`
     object-fit: contain;
     overflow: hidden;
     position: relative;
+    width: 100%;
 `;

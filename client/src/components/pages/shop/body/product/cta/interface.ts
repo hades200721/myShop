@@ -1,3 +1,5 @@
+import {BaseSyntheticEvent} from 'react';
+
 export interface IURLProps {
-    onClick: () => void;
+    onClick: (e: BaseSyntheticEvent) => void;
 }
