@@ -1,19 +1,21 @@
-import {useCallback, useEffect} from 'react';
+import {BaseSyntheticEvent, useCallback} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {debounce} from 'underscore';
 import {StyledInput, StyledSearchContainer} from './style';
 import {RootState} from '../../../store/store';
 import {IFilters} from '../../../interface';
-import {SET_FILTER_SEARCH_QUERY} from '../../../store/actions';
+import {SET_FILTER_BY_KEY} from '../../../store/actions';
 
 export const Search = () => {
   const dispatch = useDispatch();
   const globalFilters = useSelector<RootState, IFilters>((state) => state.global.filters);
 
-  const onChangeHandler = useCallback((event) => {
+  const onChangeHandler = useCallback((event: BaseSyntheticEvent) => {
     dispatch({
-      type: SET_FILTER_SEARCH_QUERY,
-      payload: event.target.value,
+      type: SET_FILTER_BY_KEY,
+      payload: {
+        id: 'searchQuery',
+        value: event.target.value,
+      },
     })
   }, []);
 

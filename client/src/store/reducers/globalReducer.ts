@@ -1,17 +1,18 @@
-import {IAction, IFilters, IGlobal} from '../../interface';
-import {SET_FILTER_SEARCH_QUERY} from '../actions';
+import {IGlobal} from '../../interface';
+import {SET_FILTER_BY_KEY} from '../actions';
+import {IFilterChangeAction} from '../../interface/IAction';
 
 const INITIAL_FILTERS_VALUE = {
     filters: {
         searchQuery: '',
     },
 }
-export const globalReducer = (state: IGlobal = INITIAL_FILTERS_VALUE, action: IAction) => {
+export const globalReducer = (state: IGlobal = INITIAL_FILTERS_VALUE, action: IFilterChangeAction) => {
     switch (action.type) {
-        case SET_FILTER_SEARCH_QUERY: {
+        case SET_FILTER_BY_KEY: {
             const filtersToSet = {
                 ...state.filters,
-                searchQuery: action.payload,
+                [action.payload.id]: action.payload.value,
             };
             return {
                 ...state,
