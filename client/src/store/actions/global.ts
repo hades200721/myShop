@@ -1,3 +1,4 @@
 export const DESTROY_SESSION = 'DESTROY_SESSION';
 export const SET_IS_SHOW_MODAL = 'SET_IS_SHOW_MODAL';
 export const SET_FILTER_BY_KEY = 'SET_FILTER_BY_KEY';
+export const SET_SORTING = 'SET_SORTING';

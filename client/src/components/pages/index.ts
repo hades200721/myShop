@@ -1,3 +1,3 @@
 export {Cart, cartLoader} from './cart';
-export {Product, productLoader} from './product';
+export {Item, productLoader} from './item';
 export {Shop, shopLoader} from './shop';

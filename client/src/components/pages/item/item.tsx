@@ -1,16 +1,15 @@
-import React, {useEffect} from 'react';
-import {useLoaderData, useLocation} from 'react-router-dom';
+import {useEffect} from 'react';
+import {LoaderFunctionArgs, useLoaderData, useLocation} from 'react-router-dom';
 import {fetchProduct} from '../../../api/product';
 import {Product as SingleProduct} from '../shop/body/product';
 import {StyledLayout} from './style';
 import {IProduct} from '../../../interface';
 
-export const Product = () => {
+export const Item = () => {
   const data = useLoaderData() as IProduct;
   const location = useLocation();
 
   useEffect(() => {
-    console.log(`11111111111111 ${location.search}`);
   }, [location.search]);
 
   return (
@@ -20,8 +19,8 @@ export const Product = () => {
   );
 };
 
-export async function productLoader({params}) {
-  const {id} = params;
+export async function productLoader(args: LoaderFunctionArgs<any>) {
+  const {id} = args.params;
   return await fetchProduct(Number(id)).then((response) => {
     return response;
   }).catch((response) => {

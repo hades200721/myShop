@@ -4,10 +4,11 @@ import {CheckboxFilterProps, IOption} from './interface';
 import {SET_FILTER_BY_KEY} from '../../../store/actions';
 import {StyledFilterContainer} from './style';
 import {RootState} from '../../../store/store';
+import {IFilters} from '../../../interface';
 
 export const Checkbox: React.FC<CheckboxFilterProps> = ({id, options}) => {
   const dispatch = useDispatch();
-  const filterValue = useSelector<RootState, any>((state) => state.global.filters[id] || {});
+  const filterValue = useSelector<RootState, IFilters>(state => state.global.filters[id] || {});
 
   const onToggleHandler = useCallback((e: BaseSyntheticEvent) => {
     const {target} = e;
@@ -31,7 +32,7 @@ export const Checkbox: React.FC<CheckboxFilterProps> = ({id, options}) => {
       {options.map((option: IOption) => <div key={option.key}>
         <label>{option.name}
           <input type='checkbox' onChange={onToggleHandler} id={option.key} checked={filterValue[option.key] || false} />
-        </label>\git
+        </label>
       </div>)}
     </StyledFilterContainer>
   );

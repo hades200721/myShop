@@ -1,7 +1,7 @@
 import type { Router } from '@remix-run/router';
 import {createBrowserRouter, Link, redirect} from 'react-router-dom';
 import {sleep} from './utils';
-import {cartLoader, Cart, productLoader, Product, shopLoader, Shop} from '../components/pages';
+import {cartLoader, Cart, productLoader, Item, shopLoader, Shop} from '../components/pages';
 import {App} from '../components/App';
 
 export const routes: Router = createBrowserRouter([
@@ -19,9 +19,9 @@ export const routes: Router = createBrowserRouter([
                 element: <Cart />,
             },
             {
-                path: "product/:id",
+                path: "item/:id",
                 loader: productLoader,
-                element: <Product />,
+                element: <Item />,
             },
             {
                 path: "redirect",

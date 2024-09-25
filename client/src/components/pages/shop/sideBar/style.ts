@@ -1,4 +1,4 @@
-import Select from 'react-select'
+import Select from 'react-select';
 import styled from 'styled-components';
 
 export const StyledSideBarContainer = styled.div`

@@ -1,10 +1,12 @@
+import {SortingProps} from './interface';
+
 export const SORT_TITLE = 'Sort';
-export const SORTING_KEY = 'sorting';
 
-export const SORTING_DEFAULT_VALUE = 'price';
 
-export const SORTING_OPTIONS = [
+export const SORTING_OPTIONS: Array<SortingProps> = [
   { value: 'price', label: 'Price' },
   { value: 'title', label: 'Name' },
   { value: 'popularity', label: 'Popularity' }
 ];
+
+export const SORTING_DEFAULT_VALUE = SORTING_OPTIONS[0];

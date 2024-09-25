@@ -22,7 +22,7 @@ export const Product: React.FC<IProductProps> = ({product}) => {
 
 
   const onProductClickHandler = useCallback((productId: number) => {
-    navigate(`/product/${productId}${search}`);
+    navigate(`/item/${productId}${search}`);
   }, [product]);
 
   const onCtaClickHandler = useCallback((e: BaseSyntheticEvent) => {

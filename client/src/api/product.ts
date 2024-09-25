@@ -96,10 +96,10 @@ const RANDOM_PRODUCT: Array<IProduct> = [
 ];
 
 export const NO_PRODUCT_FOUND: IProduct = {
-  description: 'no product with such id :(',
+  description: 'no item with such id :(',
   id: -1,
   price: 0,
-  title: 'No such product found',
+  title: 'No such item found',
   image: 'no image',
 };
 
