@@ -5,7 +5,7 @@ import {IPriceProps} from './interface';
 export const Price: React.FC<IPriceProps> = React.memo(({price}) => {
     return (
         <StyledPrice>
-            <b>{price*0.9}</b>$
+            <b>{(price*0.9).toFixed(2)}</b>$
             <StyledDiscount>{price}$</StyledDiscount>
         </StyledPrice>
     );

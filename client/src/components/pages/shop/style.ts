@@ -8,4 +8,5 @@ export const StyledPage = styled.div`
     height: 100%;
     grid-template-areas: "side-bar products";
     grid-template-columns: 320px 1fr;
+    overflow: auto;
 `;

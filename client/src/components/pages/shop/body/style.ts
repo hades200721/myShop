@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import {Button} from '../../../common';
 
 export const StyledBody = styled.div`
-    height: 1020px;
     column-gap: 30px;
     display: grid;
     flex-flow: column nowrap;
