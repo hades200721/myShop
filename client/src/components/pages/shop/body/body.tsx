@@ -1,12 +1,27 @@
-import {useCallback, useEffect, useMemo} from 'react';
+import {useMemo} from 'react';
+import {useSelector} from 'react-redux';
 import {useLoaderData} from 'react-router-dom';
 import {Product} from './product';
+import {isKeyOf} from '../../../../utils/global';
 import {SortingProps} from '../sideBar/sorting/interface';
 import {StyledBody} from './style';
 import {IFilters, IProduct} from '../../../../interface';
-import {useSelector} from 'react-redux';
 import {RootState} from '../../../../store/store';
-import {debounce} from 'underscore';
+
+const filterDataByFilter = (filteredData: Array<IProduct>, filterKey: string, filterValue: any) => {
+  switch (filterKey) {
+    case 'range':
+      return filteredData.filter((item: IProduct) => item.price >= filterValue.min && item.price <= filterValue.max);
+    default:
+      return filteredData.filter((item: IProduct) => item.price >= filterValue.min && item.price <= filterValue.max);
+  }
+}
+
+const sortData = (value: 'title' | 'price' | 'id', data: Array<IProduct>) => {
+  return (value === 'title') ?
+    data.sort((a, b) => b[value].localeCompare(a[value])) :
+    data.sort((a, b) => a[value] - b[value]);
+}
 
 export const Body = () => {
   const data = useLoaderData() as IProduct[];
@@ -15,30 +30,16 @@ export const Body = () => {
   const sorting = useSelector<RootState, SortingProps>((state) => state.global.sorting);
 
   const productsListToRenderCallback = useMemo(() => {
-    return data.map((product: IProduct) => <Product key={product.id} product={product}></Product>);
-  }, [data]);
-
-
-  const debouncedChangeHandler = useCallback(
-    debounce((value: string) => {
-      const iValue = value.toLowerCase();
-      const filteredData = data.filter(
-        (product: IProduct) =>
-          product.title.toLowerCase().includes(iValue) || product.description.toLowerCase().includes(iValue));
-    }, 300),
-    [data],
-  );
-
-  useEffect(() => {
-    debouncedChangeHandler(globalFilters['searchQuery']);
-  }, [globalFilters]);
-
-  useEffect(() => {
-    const {value} = sorting;
-    const sortedData = (value === 'title') ?
-      data.sort((a, b) => b[value].localeCompare(a[value])) :
-      data.sort((a, b) => a[value] - b[value]);
-  }, [data]);
+    const filterKeys = Object.keys(globalFilters);
+    let filteredData = [...data];
+    filterKeys.forEach((filterKey: string) => {
+      if (isKeyOf(filterKey, data[0])) {
+        filteredData = filterDataByFilter(filteredData, filterKey, globalFilters[filterKey])
+      }
+    });
+    const sortedFilteredData = sortData(sorting.value, filteredData);
+    return sortedFilteredData.map((product: IProduct) => <Product key={product.id} product={product}></Product>);
+  }, [data, globalFilters, sorting]);
 
   return (
     <StyledBody>

@@ -2,7 +2,7 @@ import React, {BaseSyntheticEvent, useCallback} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {CheckboxFilterProps, IOption} from './interface';
 import {SET_FILTER_BY_KEY} from '../../../store/actions';
-import {StyledFilterContainer} from './style';
+import {StyledCheckboxContainer} from './style';
 import {RootState} from '../../../store/store';
 import {IFilters} from '../../../interface';
 
@@ -23,17 +23,17 @@ export const Checkbox: React.FC<CheckboxFilterProps> = ({id, options}) => {
         id,
         value,
       },
-    })
+    });
     e.stopPropagation();
   }, [id, filterValue]);
 
   return (
-    <StyledFilterContainer onClick={onToggleHandler}>
+    <StyledCheckboxContainer onClick={onToggleHandler}>
       {options.map((option: IOption) => <div key={option.key}>
         <label>{option.name}
           <input type='checkbox' onChange={onToggleHandler} id={option.key} checked={filterValue[option.key] || false} />
         </label>
       </div>)}
-    </StyledFilterContainer>
+    </StyledCheckboxContainer>
   );
 };

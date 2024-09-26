@@ -1,4 +1,4 @@
 export interface SortingProps {
   label: string;
-  value: string;
+  value: 'title' | 'price' | 'id';
 }

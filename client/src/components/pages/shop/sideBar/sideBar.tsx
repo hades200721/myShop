@@ -1,5 +1,5 @@
 import {Sorting} from './sorting';
-import {FILTERS, FILTERS_TXT} from './constants';
+import {FILTERS, FILTERS_TXT, componentByType} from './constants';
 import {Container} from '../../../filters/container';
 import {StyledSideBarContainer, StyledTitle} from './style';
 
@@ -8,10 +8,13 @@ export const SideBar = () => {
     <StyledSideBarContainer>
       <Sorting />
       <StyledTitle>{FILTERS_TXT}</StyledTitle>
-      {FILTERS.map( filter =>
-        <Container key={filter.key} label={filter.label}>
-          {filter.component}
-        </Container>
+      {Object.entries(FILTERS).map(filter => {
+          const filterKey = filter[0];
+          const filterData = filter[1];
+          return (<Container key={filterKey} label={filterData.label}>
+            {componentByType(filterData.type, filterData.props)}
+          </Container>)
+        }
       )}
     </StyledSideBarContainer>
   );

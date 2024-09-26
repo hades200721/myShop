@@ -2,9 +2,10 @@ import React, {BaseSyntheticEvent, useCallback} from 'react';
 import {useDispatch} from 'react-redux';
 import {useLocation, useNavigate} from 'react-router-dom';
 import {Cta} from './cta';
-import {Description} from './description';
+// import {Description} from './description';
 import {Image} from './image';
 import {Price} from './price';
+import {Rating} from './rating';
 import {Title} from './title';
 import {StyledProductContainer} from './style';
 import {IProduct} from '../../../../../interface';
@@ -38,7 +39,8 @@ export const Product: React.FC<IProductProps> = ({product}) => {
       <Image description={product.title} thumbnailUrl={product.image} />
       <Price price={product.price} />
       <Title title={product.title} />
-      <Description title={product.description} />
+      {/*<Description title={product.description} />*/}
+      <Rating {...product.rating} />
       <Cta onClick={onCtaClickHandler} />
     </StyledProductContainer>
   );
