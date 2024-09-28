@@ -7,4 +7,19 @@ export class Product {
 
     @Column({type: 'varchar'})
     title: string;
+
+    @Column({type: 'double'})
+    price: number;
+
+    @Column({type: 'varchar'})
+    description: string;
+
+    @Column({type: 'int'})
+    categoryId: number;
+
+    @Column({type: 'varchar'})
+    image: string;
+
+    @Column({type: 'json'})
+    rating: object;
 }

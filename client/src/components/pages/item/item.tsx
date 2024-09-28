@@ -22,7 +22,7 @@ export const Item = () => {
 export async function productLoader(args: LoaderFunctionArgs<any>) {
   const {id} = args.params;
   return await fetchProduct(Number(id)).then((response) => {
-    return response;
+    return response[0];
   }).catch((response) => {
     return response;
   });
