@@ -3,10 +3,15 @@ import {Checkbox, Range} from '../../../filters';
 export const FILTERS_TXT = 'Filters';
 
 export const FILTERS = {
-    delivery: {
+    categoryId: {
       props: {
-        options: [{key: 'one', name: 'One'}],
-        id: 'delivery',
+        options: [
+          {key: 1, name: `men's clothing`},
+          {key: 2, name: `jewelery`},
+          {key: 3, name: `electronics`},
+          {key: 4, name: `women's clothing`},
+        ],
+        id: 'categoryId',
       },
       label: 'Delivery options & services',
       type: 'checkbox',

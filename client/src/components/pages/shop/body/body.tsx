@@ -10,10 +10,13 @@ import {RootState} from '../../../../store/store';
 
 const filterDataByFilter = (filteredData: Array<IProduct>, filterKey: string, filterValue: any) => {
   switch (filterKey) {
-    case 'range':
-      return filteredData.filter((item: IProduct) => item.price >= filterValue.min && item.price <= filterValue.max);
+    case 'range': {
+      const min = filterValue.min ?? Number.MIN_SAFE_INTEGER;
+      const max = filterValue.max ?? Number.MAX_SAFE_INTEGER;
+      return filteredData.filter((item: IProduct) => item.price >= min && item.price <= max);
+    }
     default:
-      return filteredData.filter((item: IProduct) => item.price >= filterValue.min && item.price <= filterValue.max);
+      return filteredData.filter((item: IProduct) => filterValue.includes(item[filterKey as keyof IProduct]));
   }
 }
 
