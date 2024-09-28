@@ -22,7 +22,6 @@ export const Sorting = () => {
     return (
         <StyledSortingContainer>
             <StyledTitle>{SORT_TITLE}</StyledTitle>
-          <StyledTitle>Sort by: {sorting.label}</StyledTitle>
           <StyledSelect onChange={onChangeHandler} options={SORTING_OPTIONS} value={sorting} />
         </StyledSortingContainer>
     );

@@ -1,15 +1,17 @@
 import {useMemo} from 'react';
 import {useSelector} from 'react-redux';
 import {useLoaderData} from 'react-router-dom';
+import {RootState} from '../../../../store/store';
 import {Product} from './product';
 import {isKeyOf} from '../../../../utils/global';
-import {SortingProps} from '../sideBar/sorting/interface';
+import {FILTERS} from '../sideBar/constants';
 import {StyledBody} from './style';
+import {SortingProps} from '../sideBar/sorting/interface';
 import {IFilters, IProduct} from '../../../../interface';
-import {RootState} from '../../../../store/store';
 
-const filterDataByFilter = (filteredData: Array<IProduct>, filterKey: string, filterValue: any) => {
-  switch (filterKey) {
+const filterDataByFilter = (filteredData: Array<IProduct>, filterKey: 'price' | 'categoryId' | 'shipping', filterValue: any) => {
+  const filterType = FILTERS[filterKey].type;
+  switch (filterType) {
     case 'range': {
       const min = filterValue.min ?? Number.MIN_SAFE_INTEGER;
       const max = filterValue.max ?? Number.MAX_SAFE_INTEGER;
