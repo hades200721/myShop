@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { catchError, firstValueFrom } from 'rxjs';
 import { AxiosError } from 'axios';
-import { BaseForecastParams, ProductInterface } from '../types';
+import { ProductInterface } from '../types';
 import { ConfigService } from '@nestjs/config';
 import { HttpService } from '@nestjs/axios';
 
@@ -13,10 +13,10 @@ export class ProductsApi {
     private readonly configService: ConfigService,
     private readonly httpService: HttpService,
   ) {
-    const historicalForecastBasUrl = this.configService.get<string>(
+    const productsBaseUrl = this.configService.get<string>(
       'products.baseUrl',
     );
-    this.url = `${historicalForecastBasUrl}/products`;
+    this.url = `${productsBaseUrl}/products`;
   }
 
   async fetchProducts(): Promise<ProductInterface> {
